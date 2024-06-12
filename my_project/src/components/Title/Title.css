@@ -1,0 +1,10 @@
+.title{
+    font-family: 'Chewy',sans-serif;
+    color: #E6DCA4;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.title__text{
+    margin: 10px;
+}
