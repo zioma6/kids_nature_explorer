@@ -19,10 +19,15 @@
 }
 
 .navbar__link--house, .navbar__link--title {
+    font-family: 'Open Sans', sans-serif;
     color: #E6DCA4;
     text-decoration: none;
-    margin-left: 20px;
     font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.navbar__link--title{
+    margin-top: 2px;
 }
 
 /* Jaśniejszy kolor przy najechaniu */
