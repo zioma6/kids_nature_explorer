@@ -1,14 +1,22 @@
 import React, { Component } from "react";
 import './App.css';
-import Navigation from "./Navigation/Navigation";
-import Title from "./Title/Title";
+import {
+    BrowserRouter,
+    Route,
+    Routes,
+    Link,
+    NavLink,
+    Outlet
+} from 'react-router-dom';
+import Main from "./Main/Main";
 
 function App() {
   return (
-    <div className="App">
-      <Navigation/>
-      <Title/>
-    </div>
+      <BrowserRouter>
+          <Routes>
+              <Route path='/' element={<Main />} />
+          </Routes>
+      </BrowserRouter>
   );
 }
 
