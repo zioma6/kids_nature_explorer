@@ -1,0 +1,65 @@
+
+/*Nawigacja stylowanie*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar__logo img {
+    height: 16rem;
+}
+
+.navbar__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar__link--house, .navbar__link--title {
+    color: #E6DCA4;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.6rem;
+}
+
+/* Jaśniejszy kolor przy najechaniu */
+.navbar__link--house:hover {
+    color: #FFFADB;
+}
+
+
+
+/* Media Queries dla responsywności */
+
+/* Tablet */
+@media (max-width: 768px) {
+    html{
+        font-size: 7px;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar__logo img {
+        margin-bottom: 10px;
+    }
+
+    .navbar__links {
+        justify-content: center;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    html{
+        font-size: 7px;
+    }
+
+    .navbar__link--house {
+        margin-left: 10px;
+    }
+}
