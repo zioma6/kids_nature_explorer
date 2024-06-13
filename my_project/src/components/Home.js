@@ -1,8 +1,8 @@
 import React from 'react';
-import Navigation from "../Navigation/Navigation";
-import Title from "../Title/Title";
+import Navigation from "./Navigation";
+import Title from "./Title";
 
-const Main = () => {
+const Home = () => {
     return (
         <div>
             <Navigation/>
@@ -11,4 +11,4 @@ const Main = () => {
     );
 };
 
-export default Main;
+export default Home;

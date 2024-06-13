@@ -1,0 +1,31 @@
+@import "variable";
+@import "reset";
+
+html{
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    font-family: $font-primary;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: $color-green-primary;
+}
+
+/* Media Queries dla responsywności */
+
+/* Tablet */
+@media (max-width: 768px) {
+    html {
+        font-size: 7px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    html {
+        font-size: 7px;
+    }
+}

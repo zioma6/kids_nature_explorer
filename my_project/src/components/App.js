@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './App.css';
+import '../sass/main.scss';
 import {
     BrowserRouter,
     Route,
@@ -8,13 +8,13 @@ import {
     NavLink,
     Outlet
 } from 'react-router-dom';
-import Main from "./Main/Main";
+import Home from "./Home";
 
 function App() {
   return (
       <BrowserRouter>
           <Routes>
-              <Route path='/' element={<Main />} />
+              <Route path='/' element={<Home />} />
           </Routes>
       </BrowserRouter>
   );

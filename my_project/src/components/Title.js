@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './Title.css'
+import '../sass/_title.scss'
 
 const Title = () => {
     const [text, setText] = useState('Witaj!')
