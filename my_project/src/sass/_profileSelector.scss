@@ -1,0 +1,19 @@
+@import "variable";
+
+.profilSelector{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addProfile{
+    height: 15rem;
+    width: 15rem;
+    background:  $color-light;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+    color: $color-green-primary;
+}
