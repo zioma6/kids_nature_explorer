@@ -1,0 +1,25 @@
+
+
+.header {
+    display: flex;
+    justify-content: center;
+
+    &__avatar {
+        height: 15rem;
+        width: 15rem;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+

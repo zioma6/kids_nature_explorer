@@ -1,19 +1,49 @@
 @import "variable";
 
+
 .profilSelector{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items: flex-start;
 }
 
-.addProfile{
-    height: 15rem;
-    width: 15rem;
-    background:  $color-light;
-    border-radius: 50%;
+.addProfile {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 10rem;
-    color: $color-green-primary;
+
+    &__icon {
+        height: 15rem;
+        width: 15rem;
+        background: $color-light;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 10rem;
+        color: $color-green-primary;
+    }
+}
+
+.profileUser{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__avatar {
+        height: 15rem;
+        width: 15rem;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+.profileUser__name, .addProfile__name{
+    font-family: $font-primary;
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: $color-light;
+    margin-top: 10px;
 }
