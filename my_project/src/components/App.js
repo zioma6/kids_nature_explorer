@@ -12,6 +12,8 @@ import {
 } from 'react-router-dom';
 import Home from "./Home";
 import Profile from "./Profile";
+import AddAdventure from "./AddAdventure";
+import JournalAdventures from "./JournalAdventures";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
              <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='profileUser' element={<Profile/>}/>
+                <Route path='addAdventure' element={<AddAdventure/>}/>
+                 <Route path='journalAdventures' element={<JournalAdventures/>}/>
              </Routes>
           </BrowserRouter>
       </UserProvider>
