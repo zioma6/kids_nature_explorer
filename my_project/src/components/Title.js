@@ -9,9 +9,14 @@ const Title = () => {
 
     const { user } = useUser();
     const location = useLocation();
+    const date = new Date()
+    const formatter = new Intl.DateTimeFormat('en-US', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    const formattedDate = formatter.format(date);
+    console.log(date)
 
     let titleWeb;
     let question;
+    let adventureDate;
 
     if (location.pathname === '/') {
         titleWeb = 'Witaj';
@@ -19,6 +24,10 @@ const Title = () => {
     } else if (location.pathname === '/profileUser' && user) {
         titleWeb = `Witaj, ${user.name}`;
         question = 'Co chcesz zrobić ?';
+    } else if (location.pathname === '/addAdventure' && user) {
+        titleWeb = `Witaj, ${user.name}`;
+        question = 'Twoja Nowa przygoda';
+        adventureDate = `${formattedDate}`;
     }
 
     useEffect(() => {
@@ -30,6 +39,7 @@ const Title = () => {
             <div className='title'>
                 <h1 className="title__text">{titleWeb}</h1>
                 <h2 className="title__question">{question}</h2>
+                <h3 className="title__adventureDate">{adventureDate}</h3>
             </div>
         </div>
     );

@@ -1,24 +1,31 @@
 @import "variable";
 
 /*Tytuł stylowanie*/
-.title{
+.title {
     color: $color-light;
     font-size: 9rem;
     text-align: center;
-    margin: 5px;
+    margin-left: 30px;
 
-    &__text{
+    &__text {
         font-family: $font-secondary;
         padding-bottom: 10px;
         margin: 5px;
     }
 
-    &__question{
+    &__question {
         font-family: $font-primary;
         letter-spacing: 2px;
         font-size: 2rem;
         font-weight: 600;
         text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    &__adventureDate {
+        @extend .title__question;
         margin-bottom: 50px;
     }
 }
+
+
