@@ -3,23 +3,21 @@ import "../sass/_profile.scss"
 import Navigation from "./Navigation";
 import Title from "./Title";
 import Footer from "./Footer";
-import {useUser} from "./UserContex";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import {Link} from "react-router-dom";
 import album from "../assets/images/Album.png"
+import ImageAvatar from "./ImageAvatar";
 
 
 const Profile = () => {
-
-    const { user } = useUser();
 
     return (
         <div>
             <Navigation/>
             <header className="header">
+                <ImageAvatar/>
                 <Title/>
-                <img src={user.avatarPath} alt={`${user.name}'s avatar`} className="header__avatar"/>
             </header>
                 <section className='selector'>
                     <Link to={"/addAdventure"}>
