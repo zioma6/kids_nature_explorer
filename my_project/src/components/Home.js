@@ -6,12 +6,10 @@ import Footer from "./Footer";
 
 const Home = () => {
     return (
-        <div className="container">
-            <Navigation/>
+        <>
             <Title/>
             <ProfilSelector/>
-            <Footer/>
-        </div>
+        </>
     );
 };
 

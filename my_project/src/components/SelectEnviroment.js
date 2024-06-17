@@ -9,16 +9,25 @@ const SelectEnviroment = () => {
     const [environments, setEnvironments] = useState([]);
 
     useEffect(() => {
+        // czy jest env w context
+
+        // nie
         supabase
             .from('Environments')
             .select('id, name, description, img_url')
-            .then(({ data, error }) => {
+            .then(({data, error}) => {
                 if (error) {
                     console.error('Error fetching environments:', error);
                 } else {
                     setEnvironments(data);
+                    // dodanie do context
+                    console.log(1)
                 }
             });
+
+        // tak
+
+        // pobieram z context
     }, []);
 
     console.log({environments})

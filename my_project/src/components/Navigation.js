@@ -13,15 +13,21 @@ const Navigation = () => {
 
     const location = useLocation();
 
+    let titleHouse;
+
     let homeLink;
     if (location.pathname === '/') {
         homeLink = '/'; //
+        titleHouse = 'Strona główna'
     } else if (location.pathname === '/profileUser') {
         homeLink = '/';
+        titleHouse = 'Strona główna'
     } else if (location.pathname === '/addAdventure') {
         homeLink = '/profileUser';
+        titleHouse = 'Profil'
     } else if (location.pathname === '/journalAdventures') {
         homeLink = '/profileUser';
+        titleHouse = 'Profil'
     }
 
     return (
@@ -34,7 +40,7 @@ const Navigation = () => {
                     <div  className="navbar__link--house">
                         <FontAwesomeIcon icon={faHouse} size="2x"/>
                     </div>
-                    <p className="navbar__link--title">Strona główna</p>
+                    <p className="navbar__link--title">{titleHouse}</p>
                 </Link>
             </nav>
         </div>

@@ -16,6 +16,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-right: 20px;
     }
 }
 
@@ -35,6 +36,7 @@
     /* Jaśniejszy kolor przy najechaniu */
     &__link--house:hover {
         color: $color-light;
+
     }
 }
 
