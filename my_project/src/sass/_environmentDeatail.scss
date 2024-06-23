@@ -1,0 +1,130 @@
+@import "variable";
+
+.environment__detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.animalsSelector, .plantsSelector {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.task {
+    max-width: 900px;
+
+    &__space {
+        background: $color-light;
+        border-radius: 10px;
+        display: flex;
+        margin: 20px 0;
+    }
+
+    &__text {
+        font-family: $font-primary;
+        overflow: visible;
+        text-transform: uppercase;
+        font-size: 2rem;
+        color: $color-green-primary;
+        padding: 30px 50px;
+    }
+}
+
+.environmentSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &__title {
+        font-family: $font-primary;
+        text-transform: uppercase;
+        font-size: 5rem;
+        color: $color-light;
+        margin: 10px 10px;
+    }
+
+    img {
+        height: 10rem;
+        width: 10rem;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 10px 10px;
+    }
+}
+
+.animal, .plant {
+    width: 150px;
+    height: 150px;
+    margin: 5px 20px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+
+    &.selected {
+
+        border-color: $color-light;
+        border-radius: 50%;
+    }
+
+    img {
+        height: 10rem;
+        width: 10rem;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+}
+
+.animals__title, .plants__title, .task__title {
+    font-family: $font-primary;
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: $color-light;
+    margin: 20px 0;
+}
+
+.animal__text, .plant__text {
+    font-family: $font-primary;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: $color-light;
+    margin: 10px 0;
+}
+
+.buttonAddAdventure {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #0056b3;
+    }
+}
+
+.custom__tooltip {
+    background-color: $color-tooltips !important;
+    color: $color-light !important;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem !important;
+    text-align: center;
+    max-width: 300px;
+}
+
+.custom__tooltip::after {
+    border-top-color: $color-tooltips;
+}

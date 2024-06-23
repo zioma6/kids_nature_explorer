@@ -1,49 +1,43 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {Link} from "react-router-dom";
 import {Tooltip} from "react-tooltip";
 import supabase from "./supabaseClient";
-import "../sass/_selectEnviroment.scss"
+import "../sass/_selectEnviroment.scss";
+import {useDispatch, useSelector} from 'react-redux';
+import {setEnvironments} from "./journalSlice";
 
 const SelectEnviroment = () => {
-
-    const [environments, setEnvironments] = useState([]);
-
+    const dispatch = useDispatch();
+    const environments = useSelector(state => state.journal.environments);
     useEffect(() => {
-        // czy jest env w context
+        if (environments.length !== 0) {
+            return
+        }
 
-        // nie
         supabase
             .from('Environments')
             .select('id, name, description, img_url')
             .then(({data, error}) => {
                 if (error) {
                     console.error('Error fetching environments:', error);
-                } else {
-                    setEnvironments(data);
-                    // dodanie do context
-                    console.log(1)
                 }
+
+                dispatch(setEnvironments(data));
             });
-
-        // tak
-
-        // pobieram z context
-    }, []);
-
-    console.log({environments})
+    }, [dispatch, environments]);
 
     return (
         <div>
             <section className='selectEnvironment'>
                 <h1 className="selectEnvironment__title">W jakim środowisku naturalnym odbywa sie twoja przygoda ?</h1>
                 <div className="selectEnvironment__icon">
-                    {environments.map(env => (
-                        <Link key={env.id} to={`/addAdventure/${env.id}`} className="environment__icon"
-                              data-tooltip-id={`tooltip-${env.id}`}>
-                            <img src={env.img_url} alt={env.name}/>
-                            <p className="environment__text">{env.name}</p>
-                            <Tooltip id={`tooltip-${env.id}`} className="custom__tooltip">
-                                {env.description}
+                    {environments.map(({id, name, description, img_url}) => (
+                        <Link key={id} to={`/addAdventure/${id}`} className="environment__icon"
+                              data-tooltip-id={`tooltip-${id}`}>
+                            <img src={img_url} alt={name}/>
+                            <p className="environment__text">{name}</p>
+                            <Tooltip id={`tooltip-${id}`} className="custom__tooltip">
+                                {description}
                             </Tooltip>
                         </Link>
                     ))}
