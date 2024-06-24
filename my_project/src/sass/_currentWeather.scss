@@ -1,0 +1,51 @@
+@import "variable";
+
+.weather__title {
+    font-family: $font-primary;
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: $color-light;
+    margin: 20px 0;
+}
+
+.weather__details {
+    max-width: 900px;
+    background: $color-light;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.weather__details--place,
+.weather__details--temperature,
+.weather__details--description {
+    font-family: $font-primary;
+    overflow: visible;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: $color-green-primary;
+    padding: 30px 50px;
+}
+
+.weather__details--place p {
+    &:last-child {
+        font-weight: 700;
+        margin-top: 20px;
+    }
+}
+
+.weather__details--temperature p {
+    &:last-child {
+        font-weight: 700;
+        margin-top: 20px;
+    }
+}
+
+.weather__details--description p {
+    &:last-child {
+        font-weight: 700;
+        margin-top: 20px;
+    }
+}
