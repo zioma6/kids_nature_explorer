@@ -1,18 +1,19 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import '../sass/_title.scss'
 import {useUser} from "./UserContex";
-import {useLocation} from "react-router-dom";
+import {useLocation, useParams} from "react-router-dom";
 
 const Title = () => {
 
     // const [question, setQuestion] = useState('Wybierz profil lub dodaj nowy')
 
-    const { user } = useUser();
+    const {user} = useUser();
     const location = useLocation();
     const date = new Date()
-    const formatter = new Intl.DateTimeFormat('en-US', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    const formatter = new Intl.DateTimeFormat('en-US', {day: '2-digit', month: '2-digit', year: 'numeric'});
     const formattedDate = formatter.format(date);
-    console.log(date)
+
+    const {id} = useParams();
 
     let titleWeb;
     let question;
@@ -25,6 +26,10 @@ const Title = () => {
         titleWeb = `Witaj, ${user.name}`;
         question = 'Co chcesz zrobić ?';
     } else if (location.pathname === '/addAdventure' && user) {
+        titleWeb = `Witaj, ${user.name}`;
+        question = 'Twoja Nowa przygoda';
+        adventureDate = `${formattedDate}`;
+    } else if (location.pathname === `/addAdventure/${id}` && user) {
         titleWeb = `Witaj, ${user.name}`;
         question = 'Twoja Nowa przygoda';
         adventureDate = `${formattedDate}`;
