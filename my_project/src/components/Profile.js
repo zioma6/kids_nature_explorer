@@ -16,7 +16,6 @@ const Profile = () => {
                         <img src={album} alt='album photo' className='toAdventures__icon'></img>
                         <div className='toAdventures__name'>Dziennik przygód</div>
                     </div>
-
                 </Link>
                 <Link to={"/addAdventure"}>
                     <div className='addAdventure'>
