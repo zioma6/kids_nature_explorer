@@ -142,45 +142,52 @@ const AdventureDetail = () => {
                     <p>Brak danych o pogodzie.</p>
                 )}
             </section>
-            <section className="environmentSection">
+            <section className="adventure__enviromental">
                 {renderEnvironmentTitle(environment.id)}
                 <div className='environment'>
-                    <img className="environment__img" src={`/images/environment/${environment.img_url}`}
+                    <img className="environment__img adventure__image"
+                         src={`/images/environment/${environment.img_url}`}
                          alt={environment.name}/>
                     <div className="environment__text">{environment.description}</div>
                 </div>
             </section>
-            <section>
+            <section className="adventure__task">
                 <h2 className="task__title title__adventure">Wykonałeś zadanie: </h2>
-                <ul>
+                <div className="task__text">
                     {tasks.map(task => (
-                        <li key={task.id}>
+                        <div key={task.id}>
                             <p>{task.description}</p>
-                        </li>
+                        </div>
                     ))}
-                </ul>
+                </div>
             </section>
-            <section>
+            <section className="adventure__animal">
                 <h2 className="title__adventure">Takie spotkałeś zwierzeta:</h2>
-                <ul>
-                    {animals.map(animal => (
-                        <li key={animal.id}>
-                            <img src={`/images/animals/${animal.img_url}`} alt={animal.name}/>
-                            <p>{animal.name}</p>
-                            <p>{animal.description}</p>
-                        </li>
-                    ))}
-                </ul>
+                {animals.map(animal => (
+                    <div className="animal__detail" key={animal.id}>
+                        <img className="animal__detail--image adventure__image"
+                             src={`/images/animals/${animal.img_url}`}
+                             alt={animal.name}/>
+                        <div>
+                            <p className="animal__detail--title">{animal.name}</p>
+                            <p className="animal__detail--text">{animal.description}</p>
+                        </div>
+
+                    </div>
+                ))}
+
             </section>
             <section>
                 <h2 className="title__adventure">Takie znalazłeś rośliny::</h2>
                 <ul>
                     {plants.map(plant => (
-                        <li key={plant.id}>
-                            <img src={`/images/plants/${plant.img_url}`} alt={plant.name}/>
-                            <p>{plant.name}</p>
-                            <p>{plant.description}</p>
-                        </li>
+                        <div className="plant__detail" key={plant.id}>
+                            <img className="adventure__image" src={`/images/plants/${plant.img_url}`} alt={plant.name}/>
+                            <div>
+                                <p className="plant__detail--title">{plant.name}</p>
+                                <p className="plant__detail--text">{plant.description}</p>
+                            </div>
+                        </div>
                     ))}
                 </ul>
             </section>
