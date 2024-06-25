@@ -5,12 +5,13 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from "./Home";
 import Profile from "./Profile";
 import AddAdventure from "./AddAdventure";
-import JournalAdventures from "./JournalAdventures";
 import MainLayout from "./MainLayout";
 import LayoutHeader from "./LayoutHeader";
 import {store} from './store'
 import {Provider} from 'react-redux'
 import EnvironmentDetail from "./EnvironmentDetail";
+import Journal from "./Journal";
+import AdventureDetail from "./AdventureDetail";
 
 function App() {
     return (
@@ -24,7 +25,8 @@ function App() {
                                 <Route path='profileUser' element={<Profile/>}/>
                                 <Route path='addAdventure' element={<AddAdventure/>}/>
                                 <Route path="addAdventure/:id" element={<EnvironmentDetail/>}/>
-                                <Route path='journalAdventures' element={<JournalAdventures/>}/>
+                                <Route path='journal' element={<Journal/>}/>
+                                <Route path="/adventure/:id" element={<AdventureDetail/>}/>
                             </Route>
                         </Route>
                     </Routes>

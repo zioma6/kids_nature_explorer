@@ -1,0 +1,56 @@
+@import "variable";
+
+.title__adventure {
+    color: $color-light;
+    font-size: 3rem;
+    text-align: center;
+    font-family: $font-primary;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 20px;
+
+}
+
+.adventure__detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.environment {
+    max-width: 900px;
+    background: $color-light;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px 0;
+
+    &Section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__text {
+        font-family: $font-primary;
+        overflow: visible;
+        text-transform: uppercase;
+        font-size: 2rem;
+        color: $color-green-primary;
+        padding: 30px 50px;
+        flex-grow: 2;
+    }
+
+    &__img {
+        margin-left: 20px;
+    }
+}
+
+.weather {
+    text-align: center;
+}
