@@ -1,0 +1,40 @@
+@import "variable";
+
+.journal__title {
+    color: $color-light;
+    font-size: 3rem;
+    text-align: center;
+    font-family: $font-primary;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+.container__adventures {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.journal {
+    text-align: center;
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__img {
+        height: 10rem;
+        width: 10rem;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 10px 10px;
+    }
+}

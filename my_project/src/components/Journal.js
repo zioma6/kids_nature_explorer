@@ -1,9 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {Link} from 'react-router-dom';
 import supabase from './supabaseClient';
+import "../sass/_journal.scss"
+import {Link} from "react-router-dom";
 
 const Journal = () => {
     const [adventures, setAdventures] = useState([]);
+    const [envImg, setEnvImg] = useState([]);
 
     useEffect(() => {
         const fetchAdventures = async () => {
@@ -21,18 +23,21 @@ const Journal = () => {
         fetchAdventures();
     }, []);
 
+    console.log(adventures)
+
     return (
         <div className="journal">
-            <h1>Journal</h1>
-            <ul>
+            <h1 className="journal__title">Oto Twój dziennik przygód</h1>
+            <div>
                 {adventures.map(adventure => (
-                    <li key={adventure.id}>
+                    <div className='journal__card' key={adventure.id}>
                         <Link to={`/adventure/${adventure.id}`}>
-                            Adventure on {new Date(adventure.date).toLocaleDateString()}
+                            <img className="journal__img" src={`/images/journal.png`} alt="album"/>
+                            <p>Twoja przygoda z dnia: {new Date(adventure.date).toLocaleDateString()}</p>
                         </Link>
-                    </li>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 };

@@ -35,6 +35,8 @@ const Title = () => {
         adventureDate = `${formattedDate}`;
     } else if (location.pathname === `/adventure/${id}` && user) {
         titleWeb = `Witaj, ${user.name}`;
+    } else if (location.pathname === `/journal` && user) {
+        titleWeb = `Witaj, ${user.name}`;
     }
 
     useEffect(() => {
