@@ -1,8 +1,10 @@
 @import "variable";
 
 
-.selectEnvironment{
-    &__title{
+.selectEnvironment {
+    margin-bottom: 40px;
+
+    &__title {
         font-family: $font-primary;
         letter-spacing: 2px;
         font-size: 2rem;
@@ -21,7 +23,7 @@
     }
 }
 
-.environment{
+.environment {
 
     &__icon {
         text-align: center;
@@ -42,23 +44,23 @@
         }
     }
 
-    &__text{
+    &__text {
         font-family: $font-primary;
         text-transform: uppercase;
         font-size: 2rem;
         color: $color-light;
-        margin-top: 10px;
+        margin: 10px 0;
     }
 }
 
-.custom__tooltip{
+.custom__tooltip {
     background-color: $color-tooltips !important;
     color: $color-light !important;
     padding: 10px;
     border-radius: 5px;
     font-size: 1.2rem !important;
     text-align: center;
-    max-width: 300px ;
+    max-width: 300px;
 }
 
 // Kolor strzałki tooltipu

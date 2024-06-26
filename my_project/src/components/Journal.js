@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import supabase from './supabaseClient';
 import "../sass/_journal.scss"
-import {Link} from "react-router-dom";
+import Carousel from "./Carousel";
+
 
 const Journal = () => {
     const [adventures, setAdventures] = useState([]);
-    const [envImg, setEnvImg] = useState([]);
 
     useEffect(() => {
         const fetchAdventures = async () => {
@@ -23,20 +23,11 @@ const Journal = () => {
         fetchAdventures();
     }, []);
 
-    console.log(adventures)
-
     return (
         <div className="journal">
             <h1 className="journal__title">Oto Twój dziennik przygód</h1>
-            <div>
-                {adventures.map(adventure => (
-                    <div className='journal__card' key={adventure.id}>
-                        <Link to={`/adventure/${adventure.id}`}>
-                            <img className="journal__img" src={`/images/journal.png`} alt="album"/>
-                            <p>Twoja przygoda z dnia: {new Date(adventure.date).toLocaleDateString()}</p>
-                        </Link>
-                    </div>
-                ))}
+            <div className="carousel__section">
+                <Carousel/>
             </div>
         </div>
     );

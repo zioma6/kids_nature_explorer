@@ -23,7 +23,7 @@
     padding: 30px 30px;
 }
 
-.environment {
+.adventure__environment {
     max-width: 900px;
     background: $color-light;
     border-radius: 10px;
@@ -33,7 +33,7 @@
     align-items: center;
     padding-top: 20px;
 
-    &__text {
+    &--text {
         text-align: center;
         font-family: $font-primary;
         overflow: visible;
@@ -92,10 +92,20 @@
     padding: 10px 20px 30px 20px;
 }
 
-//
-//div {
-//    display: flex;
-//    flex-direction: column;
-//    justify-content: center;
-//
-//}
+.buttonBackToJournal {
+    font-size: 20px;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: $color-green-primary;
+    color: $color-light;
+    border: 2px solid $color-light;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+
+    &:hover {
+        background-color: $color-light;
+        color: $color-green-primary;
+    }
+}

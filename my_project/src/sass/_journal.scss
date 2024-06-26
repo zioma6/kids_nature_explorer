@@ -23,18 +23,14 @@
 }
 
 .journal {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    &__card {
-        display: flex;
-        flex-direction: column;
-    }
 
-    &__img {
-        height: 10rem;
-        width: 10rem;
-        object-fit: cover;
-        border-radius: 50%;
-        margin: 10px 10px;
-    }
+}
+
+.carousel__section {
+    max-width: 900px;
 }

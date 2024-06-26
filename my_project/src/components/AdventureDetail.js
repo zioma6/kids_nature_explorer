@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import supabase from './supabaseClient';
 import "../sass/_adventureDetail.scss"
 
@@ -25,8 +25,6 @@ const AdventureDetail = () => {
             }
 
             setAdventure(adventureData);
-
-            console.log(adventureData)
 
             // Fetch environment data
             const {data: environmentData, error: environmentError} = await supabase
@@ -144,11 +142,11 @@ const AdventureDetail = () => {
             </section>
             <section className="adventure__enviromental">
                 {renderEnvironmentTitle(environment.id)}
-                <div className='environment'>
+                <div className='adventure__environment'>
                     <img className="environment__img adventure__image"
                          src={`/images/environment/${environment.img_url}`}
                          alt={environment.name}/>
-                    <div className="environment__text">{environment.description}</div>
+                    <div className="adventure__environment--text">{environment.description}</div>
                 </div>
             </section>
             <section className="adventure__task">
@@ -191,7 +189,9 @@ const AdventureDetail = () => {
                     ))}
                 </ul>
             </section>
-
+            <Link to={"../journal"}>
+                <button className="buttonBackToJournal">Wróć do dziennika przygód</button>
+            </Link>
         </div>
     );
 };
