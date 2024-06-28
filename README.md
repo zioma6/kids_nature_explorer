@@ -48,3 +48,27 @@ npm start
 ```
 
 #Jak używać aplikacji 
+
+Krok 1: Wybierz profil użytkownika
+-Uruchom aplikację: Po zainstalowaniu i uruchomieniu aplikacji. Wybierz profil użytkownika, zzostaniesz przeniesiony na stronę główną użytkownika.
+
+Krok 2: Wybór środowiska naturalnego
+- Po kliknięciu dodaj przygode: zobaczysz ekran główny z tytułem "W jakim środowisku naturalnym odbywa sie twoja przygoda?". Sprawdź szczegóły środowiska: Po najechaniu na ikonkę środowiska na ekranie pojawią się szczegóły na temat środowiska.
+- Wybierz środowisko: Kliknij na ikonę reprezentującą jedno ze środowisk: las, łąkę, morze lub jezioro. Po wybraniu środowiska zostaniesz przeniesiony do ekranu szczegółów tego środowiska. 
+
+Krok 3: Dodawanie szczegółów przygody
+- Aktualna pogoda: Aplikacja automatycznie pobierze aktualne dane pogodowe dla wybranego środowiska.
+- Zadania: W sekcji zadań zobaczysz zadanie do wykonania podczas tej przygody.
+- Zwierzęta: W sekcji zwierząt możesz zobaczyć listę zwierząt związanych z wybranym środowiskiem. Klikając na zwierzę, możesz je dodać do swojej przygody.
+- Rośliny: W sekcji roślin możesz zobaczyć listę roślin związanych z wybranym środowiskiem. Klikając na roślinę, możesz ją dodać do swojej przygody.
+- Dodaj przygodę: Po wybraniu zwierząt, roślin i sprawdzeniu zadania oraz pogody, kliknij przycisk "Dodaj swoją przygodę". Twoja przygoda zostanie zapisana.
+
+Krok 4: Przeglądanie dziennika przygód
+- Otwórz dziennik przygód: Wróć do ekranu głównego użytkownika i kliknij na ikonę "Dziennik przygód".
+- Przeglądaj przygody: W dzienniku przygód zobaczysz listę wszystkich dodanych przez Ciebie przygód. Kliknij na dowolną przygodę, aby zobaczyć jej szczegóły, takie jak data, pogoda, zwierzęta, rośliny i wykonane zadania.
+
+Krok 5: Zmiana imienia i avatara
+- Otwórz ustawienia profilu: W interfejsie aplikacji znajdź sekcję ustawień profilu (np. przycisk z ikoną użytkownika).
+- Zmień imię: W formularzu zmiany imienia wpisz nowe imię. Upewnij się, że imię zawiera tylko litery.
+- Zmień avatar: Wybierz nowy avatar z dostępnych opcji.
+- Zapisz zmiany: Kliknij przycisk "Zmień Imię i Avatar". Twoje zmiany zostaną zapisane, a nowa nazwa i avatar będą widoczne w aplikacji.
