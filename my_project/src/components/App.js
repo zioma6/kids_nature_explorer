@@ -15,6 +15,7 @@ import AdventureDetail from "./AdventureDetail";
 import ChangeName from "./ChangeName";
 
 function App() {
+    
     return (
         <Provider store={store}>
             <UserProvider>

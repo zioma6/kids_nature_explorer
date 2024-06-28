@@ -4,6 +4,7 @@
 .selectEnvironment {
     margin-bottom: 40px;
 
+
     &__title {
         font-family: $font-primary;
         letter-spacing: 2px;
@@ -16,7 +17,7 @@
     }
 
     &__icon {
-        height: 100px;
+        height: 100%;
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
@@ -24,7 +25,6 @@
 }
 
 .environment {
-
     &__icon {
         text-align: center;
         margin: 10px;
@@ -66,4 +66,64 @@
 // Kolor strzałki tooltipu
 .custom__tooltip::after {
     border-top-color: $color-tooltips;
+}
+
+
+// Tablet
+@media (max-width: 768px) {
+    .selectEnvironment {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &__title {
+            margin-bottom: 20px;
+        }
+
+        &__icon {
+            //Dodany grid zeby przy tablecie pojawiały sie dwi ikony obok siebie
+            width: 100%; // Dodane, aby kontener ikon zajmował całą szerokość
+            display: grid; // Zmiana na grid layout
+            grid-template-columns: repeat(2, 1fr); // Dwie kolumny
+            grid-gap: 20px; // Odstęp między kolumnami
+            justify-items: center;
+        }
+    }
+
+    .environment__icon {
+        margin-bottom: 20px;
+
+        img {
+            height: 12rem;
+            width: 12rem;
+        }
+    }
+}
+
+// Mobile
+@media (max-width: 620px) {
+    .selectEnvironment {
+        &__title {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        &__icon {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .environment__icon {
+        margin-bottom: 20px;
+
+        img {
+            height: 12rem;
+            width: 12rem;
+        }
+    }
 }

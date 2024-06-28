@@ -13,6 +13,25 @@
 
 .weather {
     text-align: center;
+
+    &__details {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__details--place,
+    &__details--temperature,
+    &__details--description {
+        background: $color-light;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: $font-primary;
+        text-transform: uppercase;
+        font-size: 2rem;
+        color: $color-green-primary;
+    }
 }
 
 .adventure__detail {
@@ -107,5 +126,56 @@
     &:hover {
         background-color: $color-light;
         color: $color-green-primary;
+    }
+    
+}
+
+// Tablet
+@media (max-width: 768px) {
+    .title__adventure {
+        font-size: 2.5rem;
+    }
+
+    .adventure__image {
+        height: 12rem;
+        width: 12rem;
+    }
+
+    .adventure__environment--text,
+    .animal__detail--title, .animal__detail--text,
+    .plant__detail--title, .plant__detail--text {
+        font-size: 1.8rem;
+    }
+
+    .buttonBackToJournal, .buttonDeleteAdventure {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+}
+
+// Mobile
+@media (max-width: 620px) {
+    .title__adventure {
+        font-size: 2rem;
+    }
+
+    .adventure__image {
+        height: 12rem;
+        width: 12rem;
+    }
+
+    .adventure__environment--text,
+    .animal__detail--title, .animal__detail--text,
+    .plant__detail--title, .plant__detail--text {
+        font-size: 1.5rem;
+    }
+
+    .buttonBackToJournal, .buttonDeleteAdventure {
+        font-size: 16px;
+        padding: 6px 12px;
+    }
+
+    .weather__details {
+        flex-direction: column;
     }
 }

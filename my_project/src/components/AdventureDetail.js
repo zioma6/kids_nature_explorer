@@ -101,10 +101,8 @@ const AdventureDetail = () => {
             return;
         }
 
-        // Redirect to the journal page after deletion
         navigate('/journal');
     };
-
 
     if (!adventure) {
         return <p>Loading...</p>;
@@ -177,6 +175,7 @@ const AdventureDetail = () => {
             </section>
             <section className="adventure__animal">
                 <h2 className="title__adventure">Takie spotkałeś zwierzeta:</h2>
+                <div></div>
                 {animals.map(animal => (
                     <div className="animal__detail" key={animal.id}>
                         <img className="animal__detail--image adventure__image"

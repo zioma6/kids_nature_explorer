@@ -13,16 +13,17 @@ const ProfilSelector = () => {
     return (
         <div>
             <section className='profilSelector'>
-                <Link to="/changeName">
-                    <div className='addProfile'>
-                        <div className='addProfile__icon'><FontAwesomeIcon icon={faArrowsRotate}/></div>
-                        <div className='addProfile__name'>Zmień imię użytkownika</div>
+                <Link to="/profileUser">
+                    <div className="profilSelector__profileUser">
+                        <img src={user.avatarPath} alt={`${user.name}'s avatar`}
+                             className="profilSelector__profileUser--avatar"/>
+                        <div className='profilSelector__profileUser--name'>{user.name}</div>
                     </div>
                 </Link>
-                <Link to="/profileUser">
-                    <div className="profileUser">
-                        <img src={user.avatarPath} alt={`${user.name}'s avatar`} className="profileUser__avatar"/>
-                        <div className='profileUser__name'>{user.name}</div>
+                <Link to="/changeName">
+                    <div className='profilSelector__changeName'>
+                        <div className='profilSelector__changeName--icon'><FontAwesomeIcon icon={faArrowsRotate}/></div>
+                        <div className='profilSelector__changeName--name'>Zmień imię użytkownika</div>
                     </div>
                 </Link>
 
