@@ -1,27 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import supabase from './supabaseClient';
+import React from 'react';
 import "../sass/_journal.scss"
 import Carousel from "./Carousel";
 
 
 const Journal = () => {
-    const [adventures, setAdventures] = useState([]);
-
-    useEffect(() => {
-        const fetchAdventures = async () => {
-            const {data, error} = await supabase
-                .from('JournalEntries')
-                .select('*');
-
-            if (error) {
-                console.error('Error fetching adventures:', error);
-            } else {
-                setAdventures(data);
-            }
-        };
-
-        fetchAdventures();
-    }, []);
 
     return (
         <div className="journal">

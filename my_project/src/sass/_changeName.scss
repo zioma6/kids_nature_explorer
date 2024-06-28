@@ -100,3 +100,43 @@
     margin: 20px 0;
 }
 
+
+// Mobile
+@media (max-width: 620px) {
+    .changeName-container {
+        padding: 10px;
+        max-width: 90%;
+    }
+
+    .changeName__title {
+        font-size: 2rem;
+    }
+
+    .changeName__label, .changeName__avatar--title {
+        font-size: 1.5rem;
+    }
+
+    .changeName-container input {
+        padding: 8px;
+        margin-top: 15px;
+    }
+
+    .changeName-container .error {
+        font-size: 1.2rem;
+    }
+
+    .changeName__avatar {
+        height: 12rem;
+        width: 12rem;
+        margin: 5px 10px;
+    }
+
+    .buttonChangeName {
+        font-size: 1.5rem;
+        padding: 8px 16px;
+    }
+
+    .success {
+        font-size: 1.5rem;
+    }
+}

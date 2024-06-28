@@ -13,7 +13,7 @@ const Profile = () => {
             <section className='selector'>
                 <Link to={"/journal"}>
                     <div className='toAdventures'>
-                        <img src={album} alt='album photo' className='toAdventures__icon'></img>
+                        <img src={album} alt='album' className='toAdventures__icon'></img>
                         <div className='toAdventures__name'>Dziennik przygód</div>
                     </div>
                 </Link>
