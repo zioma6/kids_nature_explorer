@@ -7,11 +7,13 @@ import {useDispatch, useSelector} from 'react-redux';
 import {setEnvironments} from "./journalSlice";
 
 const SelectEnviroment = () => {
+
     const dispatch = useDispatch();
     const environments = useSelector(state => state.journal.environments);
+
     useEffect(() => {
-        if (environments.length !== 0) {
-            return
+        if (Object.keys(environments).length !== 0) {
+            return;
         }
 
         supabase
@@ -20,9 +22,9 @@ const SelectEnviroment = () => {
             .then(({data, error}) => {
                 if (error) {
                     console.error('Error fetching environments:', error);
+                } else {
+                    dispatch(setEnvironments(data));
                 }
-
-                dispatch(setEnvironments(data));
             });
     }, [dispatch, environments]);
 
@@ -31,7 +33,7 @@ const SelectEnviroment = () => {
             <section className='selectEnvironment'>
                 <h1 className="selectEnvironment__title">W jakim środowisku naturalnym odbywa sie twoja przygoda ?</h1>
                 <div className="selectEnvironment__icon">
-                    {environments.map(({id, name, description, img_url}) => (
+                    {Object.values(environments).map(({id, name, description, img_url}) => (
                         <Link key={id} to={`/addAdventure/${id}`} className="environment__icon"
                               data-tooltip-id={`tooltip-${id}`}>
 

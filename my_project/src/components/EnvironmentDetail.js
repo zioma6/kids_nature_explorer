@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import supabase from './supabaseClient';
-import {addJournalEntry, setAnimals, setEnvironments, setPlants, setTasks} from './journalSlice';
+import {addJournalEntry, setAnimals, setPlants, setTasks} from './journalSlice';
 import '../sass/_environmentDeatail.scss';
 import {Tooltip} from "react-tooltip";
 import CurrentWeather from "./CurrentWeather";
@@ -11,30 +11,31 @@ const EnvironmentDetail = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const {environments, animals, plants, tasks} = useSelector(state => state.journal);
-    const [environment, setEnvironment] = useState(environments[id] || null);
+    const {animals, plants, tasks} = useSelector(state => state.journal);
+
+
+    const [environment, setEnvironment] = useState(null);
     const [selectedAnimals, setSelectedAnimals] = useState([]);
     const [selectedPlants, setSelectedPlants] = useState([]);
     const [newAdventureId, setNewAdventureId] = useState(null);
     const [weatherData, setWeatherData] = useState(null);
 
     useEffect(() => {
-        if (!environment) {
-            supabase
-                .from('Environments')
-                .select('id, name, description, img_url')
-                .eq('id', id)
-                .single()
-                .then(({data, error}) => {
-                    if (error) {
-                        console.error('Error fetching environment:', error);
-                    } else {
-                        setEnvironment(data);
-                        dispatch(setEnvironments([data]));
-                    }
-                });
-        }
+        supabase
+            .from('Environments')
+            .select('id, name, description, img_url')
+            .eq('id', id)
+            .single()
+            .then(({data, error}) => {
+                if (error) {
+                    console.error('Error fetching environment:', error);
+                } else {
+                    setEnvironment(data);
+                }
+            });
+    }, [id]);
 
+    useEffect(() => {
         const fetchAnimals = () => {
             supabase
                 .from('AnimalEnvironments')
@@ -97,7 +98,7 @@ const EnvironmentDetail = () => {
         fetchAnimals();
         fetchPlants();
         fetchTask();
-    }, [id, dispatch, environment]);
+    }, [id, dispatch]);
 
     const handleAddEntry = () => {
         const newEntry = {
