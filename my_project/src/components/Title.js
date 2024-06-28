@@ -37,7 +37,10 @@ const Title = () => {
         titleWeb = `Witaj, ${user.name}`;
     } else if (location.pathname === `/journal` && user) {
         titleWeb = `Witaj, ${user.name}`;
+    } else if (location.pathname === `/changeName` && user) {
+        titleWeb = `Witaj, ${user.name}`;
     }
+
 
     useEffect(() => {
         document.titleWeb = titleWeb;

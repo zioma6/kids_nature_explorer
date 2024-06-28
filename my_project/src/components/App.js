@@ -12,6 +12,7 @@ import {Provider} from 'react-redux'
 import EnvironmentDetail from "./EnvironmentDetail";
 import Journal from "./Journal";
 import AdventureDetail from "./AdventureDetail";
+import ChangeName from "./ChangeName";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                         <Route path="/" element={<MainLayout/>}>
                             <Route index element={<Home/>}/>
                             <Route element={<LayoutHeader/>}>
+                                <Route path='changeName' element={<ChangeName/>}/>
                                 <Route path='profileUser' element={<Profile/>}/>
                                 <Route path='addAdventure' element={<AddAdventure/>}/>
                                 <Route path="addAdventure/:id" element={<EnvironmentDetail/>}/>

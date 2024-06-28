@@ -1,7 +1,7 @@
-import ImageAvatar from "./ImageAvatar";
 import Title from "./Title";
 import {Outlet} from "react-router-dom";
 import React from "react";
+import ImageAvatar from "./ImageAvatar";
 
 const LayoutHeader = () => {
     return (

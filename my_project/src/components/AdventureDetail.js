@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {Link, useParams} from 'react-router-dom';
+import {Link, useNavigate, useParams} from 'react-router-dom';
 import supabase from './supabaseClient';
 import "../sass/_adventureDetail.scss"
 
 const AdventureDetail = () => {
     const {id} = useParams();
+    const navigate = useNavigate();
     const [adventure, setAdventure] = useState(null);
     const [environment, setEnvironment] = useState([])
     const [animals, setAnimals] = useState([]);
@@ -88,6 +89,21 @@ const AdventureDetail = () => {
 
         fetchAdventure();
     }, [id]);
+
+    const handleDelete = async () => {
+        const {error} = await supabase
+            .from('JournalEntries')
+            .delete()
+            .eq('id', id);
+
+        if (error) {
+            console.error('Error deleting adventure:', error);
+            return;
+        }
+
+        // Redirect to the journal page after deletion
+        navigate('/journal');
+    };
 
 
     if (!adventure) {
@@ -192,6 +208,7 @@ const AdventureDetail = () => {
             <Link to={"../journal"}>
                 <button className="buttonBackToJournal">Wróć do dziennika przygód</button>
             </Link>
+            <button className="buttonDeleteAdventure" onClick={handleDelete}>Usuń przygodę</button>
         </div>
     );
 };
