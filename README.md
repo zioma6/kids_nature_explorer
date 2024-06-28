@@ -47,7 +47,7 @@ REACT_APP_API_KEY_WEATHER=your_openweathermap_api_key
 npm start
 ```
 
-#Jak używać aplikacji 
+# Jak używać aplikacji 
 
 Krok 1: Wybierz profil użytkownika
 -Uruchom aplikację: Po zainstalowaniu i uruchomieniu aplikacji. Wybierz profil użytkownika, zzostaniesz przeniesiony na stronę główną użytkownika.
@@ -72,5 +72,13 @@ Krok 5: Zmiana imienia i avatara
 - Zmień imię: W formularzu zmiany imienia wpisz nowe imię. Upewnij się, że imię zawiera tylko litery.
 - Zmień avatar: Wybierz nowy avatar z dostępnych opcji.
 - Zapisz zmiany: Kliknij przycisk "Zmień Imię i Avatar". Twoje zmiany zostaną zapisane, a nowa nazwa i avatar będą widoczne w aplikacji.
+
+# Zadania Must Have:
+1. Symulowanie użytkownika.
+2. Tworzenie Nowej Przygody:
+3. Pobieranie z API aktualnej pogody
+4. Dostęp do Historii Przygód:
+5. Użycie bazy danych do przechowywania informacji oraz zapisywania w niej przygód
+
 
 **Autor: Agnieszka Graban**
