@@ -34,3 +34,12 @@
 .carousel__section {
     max-width: 900px;
 }
+
+
+@media (max-width: 620px) {
+
+    .journal__title {
+        font-size: 2rem;
+    }
+}
+

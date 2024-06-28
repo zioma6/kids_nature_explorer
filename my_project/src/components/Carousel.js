@@ -18,7 +18,24 @@ const Carousel = () => {
         speed: 1000,
         slidesToShow: 3,
         slidesToScroll: 1,
-
+        responsive: [
+            {
+                breakpoint: 1028,
+                settings: {
+                    dots: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 620,
+                settings: {
+                    dots: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
     }
 
     useEffect(() => {
@@ -41,7 +58,7 @@ const Carousel = () => {
         <div>
             <Slider ref={slider} {...settings}>
                 {adventures.map(adventure => (
-                    <div key={adventure.id}>
+                    <div className="journal__div" key={adventure.id}>
                         <Link className="journal__card" to={`/adventure/${adventure.id}`}>
                             <img className="journal__img" src={`/images/journal.png`} alt="album"/>
                             <h3 className="journal__text">Twoja przygoda z
