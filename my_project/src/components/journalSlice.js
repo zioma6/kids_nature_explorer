@@ -5,16 +5,24 @@ const initialState = {
     plants: [],
     tasks: [],
     journalEntries: [],
-    environments: [],
+    environments: {},
 };
 
 const journalSlice = createSlice({
     name: 'journal',
     initialState,
     reducers: {
-        setEnvironments: (state, action) => {
-            state.environments = action.payload
+        setEnvironments(state, action) {
+            const environmentsArray = Array.isArray(action.payload) ? action.payload : [action.payload];
+            state.environments = {
+                ...state.environments,
+                ...environmentsArray.reduce((acc, env) => ({
+                    ...acc,
+                    [env.id]: env
+                }), {})
+            };
         },
+
         addAnimal: (state, action) => {
             state.animals.push(action.payload);
         },
