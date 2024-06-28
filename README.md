@@ -72,3 +72,5 @@ Krok 5: Zmiana imienia i avatara
 - Zmień imię: W formularzu zmiany imienia wpisz nowe imię. Upewnij się, że imię zawiera tylko litery.
 - Zmień avatar: Wybierz nowy avatar z dostępnych opcji.
 - Zapisz zmiany: Kliknij przycisk "Zmień Imię i Avatar". Twoje zmiany zostaną zapisane, a nowa nazwa i avatar będą widoczne w aplikacji.
+
+**Autor: Agnieszka Graban**
