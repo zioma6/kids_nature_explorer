@@ -6,7 +6,7 @@ const CurrentWeather = ({setWeatherData}) => {
     const [weather, setWeather] = useState(null);
     const [error, setError] = useState(null);
 
-    const apiKey = '4d2438a46251d3dc68d4fdaad1ecfd91';
+    const apiKey = process.env.REACT_APP_API_KEY_WEATHER
 
     useEffect(() => {
         const getWeather = async (lat, lon) => {
@@ -42,7 +42,7 @@ const CurrentWeather = ({setWeatherData}) => {
         };
 
         getLocation();
-    }, [setWeatherData]);
+    }, [setWeatherData, apiKey]);
 
     if (error) {
         return <div>Error: {error}</div>;
