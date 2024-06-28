@@ -26,8 +26,25 @@ Celem aplikacji "Kids Nature Explorer" jest zachęcanie dzieci do aktywnego spę
 - Supabase 
 - Sass
 
-#Instalacja
+# Instalacja
 1. Sklonuj repozytorium:
+```sh
+https://github.com/zioma6/kids_nature_explorer.git
+```
+2. Zainstaluj paczki
+```sh
+npm install
+```
+3.Skonfiguruj zmienne środowiskowe:
+Utwórz plik .env w katalogu głównym projektu i dodaj poniższe zmienne:
+```sh
+REACT_APP_SUPABASE_URL=your_supabase_url
+REACT_APP_SUPABASE_KEY=your_supabase_anon_key
+REACT_APP_API_KEY_WEATHER=your_openweathermap_api_key
+```
+4. Uruchom aplikacje
+```sh
+npm start
+```
 
-   
-
+#Jak używać aplikacji 
