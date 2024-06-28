@@ -35,6 +35,9 @@ const Navigation = () => {
     } else if (location.pathname === `/adventure/${id}`) {
         homeLink = '/journal';
         titleHouse = 'Dziennik Przygód'
+    } else if (location.pathname === `/changeName`) {
+        homeLink = '/';
+        titleHouse = 'Strona główna'
     }
 
     return (
