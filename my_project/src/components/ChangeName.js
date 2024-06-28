@@ -39,6 +39,7 @@ const ChangeName = () => {
                     <input
                         type="text"
                         value={newName}
+                        name="name"
                         onChange={(e) => {
                             setError(null); // Czyszczenie błędu podczas pisania
                             setSuccessMessage(null);
