@@ -11,7 +11,7 @@ const Profile = () => {
     return (
         <>
             <section className='selector'>
-                <Link to={"/journalAdventures"}>
+                <Link to={"/journal"}>
                     <div className='toAdventures'>
                         <img src={album} alt='album photo' className='toAdventures__icon'></img>
                         <div className='toAdventures__name'>Dziennik przygód</div>

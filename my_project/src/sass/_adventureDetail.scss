@@ -1,0 +1,111 @@
+@import "variable";
+
+.title__adventure {
+    color: $color-light;
+    font-size: 3rem;
+    text-align: center;
+    font-family: $font-primary;
+    letter-spacing: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+.weather {
+    text-align: center;
+}
+
+.adventure__detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 30px;
+}
+
+.adventure__environment {
+    max-width: 900px;
+    background: $color-light;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+
+    &--text {
+        text-align: center;
+        font-family: $font-primary;
+        overflow: visible;
+        text-transform: uppercase;
+        font-size: 2rem;
+        color: $color-green-primary;
+        padding: 10px 30px 20px 30px;
+    }
+}
+
+.adventure__image {
+    height: 10rem;
+    width: 10rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 10px 10px;
+}
+
+
+.task__text {
+    max-width: 900px;
+    background: $color-light;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.animal__detail, .plant__detail {
+    max-width: 900px;
+    background: $color-light;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.animal__detail--title, .animal__detail--text,
+.plant__detail--title, .plant__detail--text {
+    font-family: $font-primary;
+    overflow: visible;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: $color-green-primary;
+    text-align: center;
+}
+
+.animal__detail--title, .plant__detail--title {
+    font-weight: 700;
+    padding: 30px 20px 0 20px;
+}
+
+.animal__detail--text, .plant__detail--text {
+    padding: 10px 20px 30px 20px;
+}
+
+.buttonBackToJournal {
+    font-size: 20px;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: $color-green-primary;
+    color: $color-light;
+    border: 2px solid $color-light;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+
+    &:hover {
+        background-color: $color-light;
+        color: $color-green-primary;
+    }
+}

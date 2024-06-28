@@ -29,8 +29,13 @@ const Navigation = () => {
     } else if (location.pathname === `/addAdventure/${id}`) {
         homeLink = '/addAdventure';
         titleHouse = 'Stwórz przygode'
+    } else if (location.pathname === `/journal`) {
+        homeLink = '/profileUser';
+        titleHouse = 'Profil'
+    } else if (location.pathname === `/adventure/${id}`) {
+        homeLink = '/journal';
+        titleHouse = 'Dziennik Przygód'
     }
-
 
     return (
         <div>

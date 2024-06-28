@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import "../sass/_currentWeather.scss";
 
-const CurrentWeather = () => {
+const CurrentWeather = ({setWeatherData}) => {
 
     const [weather, setWeather] = useState(null);
     const [error, setError] = useState(null);
@@ -18,6 +18,7 @@ const CurrentWeather = () => {
                 }
                 const data = await response.json();
                 setWeather(data);
+                setWeatherData(data);
             } catch (error) {
                 setError(error.message);
             }
@@ -41,7 +42,7 @@ const CurrentWeather = () => {
         };
 
         getLocation();
-    }, []);
+    }, [setWeatherData]);
 
     if (error) {
         return <div>Error: {error}</div>;

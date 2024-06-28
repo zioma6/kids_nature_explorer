@@ -1,23 +1,22 @@
 import React, {useEffect, useState} from 'react';
-import {useParams} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import supabase from './supabaseClient';
 import {addJournalEntry, setAnimals, setEnvironments, setPlants, setTasks} from './journalSlice';
 import '../sass/_environmentDeatail.scss';
 import {Tooltip} from "react-tooltip";
+import CurrentWeather from "./CurrentWeather";
 
 const EnvironmentDetail = () => {
     const {id} = useParams();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const {environments, animals, plants, tasks} = useSelector(state => state.journal);
     const [environment, setEnvironment] = useState(environments[id] || null);
     const [selectedAnimals, setSelectedAnimals] = useState([]);
     const [selectedPlants, setSelectedPlants] = useState([]);
-
-    console.log(animals)
-    animals.map(function (animal) {
-        console.log(animal)
-    })
+    const [newAdventureId, setNewAdventureId] = useState(null);
+    const [weatherData, setWeatherData] = useState(null);
 
     useEffect(() => {
         if (!environment) {
@@ -103,23 +102,32 @@ const EnvironmentDetail = () => {
     const handleAddEntry = () => {
         const newEntry = {
             environment_id: id,
-            animals: selectedAnimals,
-            plants: selectedPlants,
-            tasks,
+            animals: selectedAnimals.map(animal => animal.id),
+            plants: selectedPlants.map(plant => plant.id),
+            tasks: tasks.map(task => task.id),
             date: new Date().toISOString(),
+            weather: weatherData,
         };
 
         supabase
             .from('JournalEntries')
-            .insert(newEntry)
+            .insert([newEntry])
+            .select()
             .then(({data, error}) => {
                 if (error) {
                     console.error('Error adding journal entry:', error);
                 } else {
                     dispatch(addJournalEntry(data[0]));
+                    setNewAdventureId(data[0].id);
                 }
             });
     };
+
+    useEffect(() => {
+        if (newAdventureId) {
+            navigate(`/adventure/${newAdventureId}`);
+        }
+    }, [newAdventureId, navigate]);
 
     const toggleAnimalSelection = (animal) => {
         if (selectedAnimals.some(selected => selected.id === animal.id)) {
@@ -148,8 +156,12 @@ const EnvironmentDetail = () => {
         <div className="environment__detail">
             <section className="environmentSection">
                 <h1 className="environmentSection__title">{environment.name}</h1>
-                <img src={environment.img_url} alt={environment.name}/>
+                <img src={`/images/environment/${environment.img_url}`} alt={environment.name}/>
             </section>
+            <section className="weatherSection">
+                <CurrentWeather setWeatherData={setWeatherData}/>
+            </section>
+
             <section className="task">
                 <h2 className="task__title">ZADANIE dla ciebie podczas tego spaceru:</h2>
                 {tasks.length > 0 && (
@@ -181,18 +193,18 @@ const EnvironmentDetail = () => {
                     {plants.map(plant => (
                         <div key={plant.id} className={`plant ${isSelected(plant, selectedPlants) ? 'selected' : ''}`}
                              onClick={() => togglePlantSelection(plant)} data-tooltip-id={`tooltip-plant-${plant.id}`}>
-                            <img src={`/images/plants/${plant.img_url}`} alt={plant.name}/>
+                            <img className="plant__img" src={`/images/plants/${plant.img_url}`} alt={plant.name}/>
                             <p className="plant__text">{plant.name}</p>
                             <Tooltip id={`tooltip-plant-${plant.id}`} className="custom__tooltip">
                                 {plant.description}
                             </Tooltip>
-
                         </div>
                     ))}
                 </div>
             </section>
 
-            <button className="buttonAddAdventure" onClick={handleAddEntry}>Add to Journal</button>
+            <button className="buttonAddAdventure" onClick={handleAddEntry}>Dodaj swoją przygodę</button>
+
         </div>
     );
 };

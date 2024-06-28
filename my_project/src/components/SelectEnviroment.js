@@ -26,6 +26,8 @@ const SelectEnviroment = () => {
             });
     }, [dispatch, environments]);
 
+    console.log(environments)
+
     return (
         <div>
             <section className='selectEnvironment'>
@@ -34,7 +36,7 @@ const SelectEnviroment = () => {
                     {environments.map(({id, name, description, img_url}) => (
                         <Link key={id} to={`/addAdventure/${id}`} className="environment__icon"
                               data-tooltip-id={`tooltip-${id}`}>
-                            <img src={img_url} alt={name}/>
+                            <img src={`/images/environment/${img_url}`} alt={name}/>
                             <p className="environment__text">{name}</p>
                             <Tooltip id={`tooltip-${id}`} className="custom__tooltip">
                                 {description}
